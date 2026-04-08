@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['gpioconf_5ft_0',['gpioConf_t',['../structgpio_conf__t.html',1,'']]]
+  ['analog_5finput_5fconfig_5ft_0',['analog_input_config_t',['../structanalog__input__config__t.html',1,'']]]
 ];

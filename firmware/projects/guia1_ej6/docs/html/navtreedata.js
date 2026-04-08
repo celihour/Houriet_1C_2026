@@ -24,21 +24,27 @@
 */
 var NAVTREE =
 [
-  [ "Ejercicio 6 Guia 1", "index.html", [
+  [ "Guia 1 Ejercicio 6", "index.html", [
     [ "Conversión a BCD y visualización en display de 7 segmentos", "index.html", "index" ],
-    [ "Classes", "annotated.html", [
-      [ "Class List", "annotated.html", "annotated_dup" ],
-      [ "Class Index", "classes.html", null ],
-      [ "Class Members", "functions.html", [
-        [ "All", "functions.html", null ],
+    [ "Topics", "topics.html", "topics" ],
+    [ "Estructuras de datos", "annotated.html", [
+      [ "Estructuras de datos", "annotated.html", "annotated_dup" ],
+      [ "Índice de estructuras de datos", "classes.html", null ],
+      [ "Campos de datos", "functions.html", [
+        [ "Todos", "functions.html", null ],
         [ "Variables", "functions_vars.html", null ]
       ] ]
     ] ],
-    [ "Files", "files.html", [
-      [ "File List", "files.html", "files_dup" ],
-      [ "File Members", "globals.html", [
-        [ "All", "globals.html", null ],
-        [ "Functions", "globals_func.html", null ]
+    [ "Archivos", "files.html", [
+      [ "Lista de archivos", "files.html", "files_dup" ],
+      [ "Globales", "globals.html", [
+        [ "Todos", "globals.html", "globals_dup" ],
+        [ "Funciones", "globals_func.html", "globals_func" ],
+        [ "Variables", "globals_vars.html", null ],
+        [ "typedefs", "globals_type.html", null ],
+        [ "Enumeraciones", "globals_enum.html", null ],
+        [ "Valores de enumeraciones", "globals_eval.html", "globals_eval" ],
+        [ "defines", "globals_defs.html", "globals_defs" ]
       ] ]
     ] ]
   ] ]
@@ -46,9 +52,16 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"annotated.html"
+"_c_make_c_compiler_id_8c.html",
+"globals_defs_a.html",
+"group___b_l_e.html#ggaed078c594a86d36a49f51710e35c405baf5de66adc9eb2aa183eab1e23f977894",
+"group___i_c_o_n_s.html#gga945c9cb2ded81b38da222e91d09df40ba63235a85fe10b3e2fd10f7705b25dda7",
+"group___m_p_u6050.html#ga3acc5b8a6dd2e99bea903441e16d2ea9",
+"group___m_p_u6050.html#gaa67a00fa91990b91552f68e1b8acfa9c",
+"group___s_p_i.html#gga7ddb86ccba25a168f889234061e21692a7e24ffb02d34c2b3a679095809eafc55",
+"spi__mcu_8c.html#a137551b499589b9dffe6148f9b4d3b46"
 ];
 
-var SYNCONMSG = 'click to disable panel synchronization';
-var SYNCOFFMSG = 'click to enable panel synchronization';
-var LISTOFALLMEMBERS = 'List of all members';
+var SYNCONMSG = 'pulsar para deshabilitar sincronización';
+var SYNCOFFMSG = 'pulsar para habilitar sincronización';
+var LISTOFALLMEMBERS = 'Lista de todos los miembros';

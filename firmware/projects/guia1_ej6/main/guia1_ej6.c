@@ -1,4 +1,8 @@
-/*! @mainpage Conversión a BCD y visualización en display de 7 segmentos
+/**
+ * @file main.c
+ * @brief Conversión a BCD y visualización en display de 7 segmentos.
+ * 
+ * @mainpage Conversión a BCD y visualización en display de 7 segmentos
  *
  * @section genDesc General Description
  *
