@@ -2,42 +2,37 @@
  *
  * @section genDesc General Description
  *
- * Se implementa la conversión de un número decimal a formato BCD 
- * y su visualización en un display de 7 segmentos.
+ * Se implementa la conversión de un número decimal a formato BCD y su posterior
+ * visualización en un display de 7 segmentos multiplexado.
  *
- * El funcionamiento básico es:
- * - Convertir un número decimal a sus dígitos individuales en BCD.
- * - Mostrar cada dígito en el display
- * - Utilizar pines GPIO para controlar los segmentos del display y la selección
- *   de dígitos.
- *
- * <a href="https://drive.google.com/...">Operation Example</a>
+ * El funcionamiento consiste en:
+ * - Convertir un número decimal a sus dígitos individuales.
+ * - Representar cada dígito en formato BCD utilizando 4 GPIO.
+ * - Seleccionar cada dígito del display mediante líneas SEL para multiplexación.
  *
  * @section hardConn Hardware Connection
  *
  * El display de 7 segmentos está conectado al ESP32 de la siguiente manera:
  *
- * |    Peripheral  |   ESP32   	| 
- * |:--------------:|:--------------|
- * | 	D1	 	| 	GPIO_20		|
- * | 	D2	 	| 	GPIO_21		| 
- * | 	D3	 	| 	GPIO_22		| 
- * | 	D4	 	| 	GPIO_23		| 
- * | 	SEL_1	 | 	GPIO_19		| 
- * | 	SEL_3	 | 	GPIO_9		| 
- * | 	+5V	 	| 	+5V		    |
- * | 	GND	 	| 	GND		    | 
- *
- *
+ * | Peripheral | ESP32   |
+ * |:----------:|:-------:|
+ * | D1         | GPIO_20 |
+ * | D2         | GPIO_21 |
+ * | D3         | GPIO_22 |
+ * | D4         | GPIO_23 |
+ * | SEL_1      | GPIO_19 |
+ * | SEL_2      | GPIO_18 |
+ * | SEL_3      | GPIO_9  |
+ * | +5V        | +5V     |
+ * | GND        | GND     |
  *
  * @section changelog Changelog
  *
- * |   Date	    | Description                                    |
- * |:----------:|:-----------------------------------------------|
- * | 08/04/2026 | Convertimos de decimal a BCD y lo mostramos en un display de 7 segmentos|
+ * | Date       | Description                                               |
+ * |:----------:|:----------------------------------------------------------|
+ * | 08/04/2026 | Conversión decimal a BCD y visualización en display.       |
  *
  * @author Houriet Celina celina.houriet@ingenieria.uner.edu.ar
- *
  */
 
 /*==================[inclusions]=============================================*/
@@ -51,30 +46,23 @@
 /*==================[macros and definitions]=================================*/
 
 /**
- * @brief Estructura de configuración para pines GPIO
- *
- * Esta estructura define la configuración de un pin GPIO, incluyendo el número del pin
- * y su dirección (entrada o salida).
+ * @brief Estructura para configuración de pines GPIO.
  */
 typedef struct{
-    gpio_t pin;			/*!< GPIO pin number */
-    io_t dir;			/*!< GPIO direction '0' IN;  '1' OUT*/
+    gpio_t pin;          /*!< GPIO pin number */
+    io_t dir;            /*!< GPIO direction */
 } gpioConf_t;
-
-/*==================[internal data definition]===============================*/
 
 /*==================[internal functions declaration]=========================*/
 
 /**
- * @brief Convierte un número decimal a un arreglo BCD
+ * @brief Convierte un número decimal en un arreglo de dígitos.
  *
- * Esta función toma un número decimal y lo convierte a su representación BCD
- * en un arreglo de dígitos.
+ * @param data Número decimal a convertir.
+ * @param digits Cantidad de dígitos a obtener.
+ * @param bcd_number Arreglo donde se almacenan los dígitos obtenidos.
  *
- * @param data Número decimal a convertir
- * @param digits Número de dígitos en el arreglo BCD 
- * @param bcd_number Arreglo donde se almacenarán los dígitos BCD 
- * 
+ * @return int8_t Retorna 0 si la conversión fue exitosa.
  */
 int8_t convertirBCD(uint32_t data, uint8_t digits, uint8_t *bcd_number)
 {
@@ -87,14 +75,10 @@ int8_t convertirBCD(uint32_t data, uint8_t digits, uint8_t *bcd_number)
 }
 
 /**
- * @brief Escribe un dígito BCD en los pines GPIO correspondientes
+ * @brief Configura los GPIO de datos según el valor BCD recibido.
  *
- * Esta función configura los pines GPIO para mostrar un dígito en un display
- * de 7 segmentos usando codificación BCD. Cada bit del número se asigna a un pin GPIO.
- *
- * @param numero Dígito BCD a mostrar 
- * @param gpio_bcd Arreglo de 4 configuraciones GPIO para los bits BCD 
- *
+ * @param numero Dígito a representar (0 a 9).
+ * @param gpio_bcd Vector con los 4 GPIO correspondientes a D1-D4.
  */
 void deBCDaGPIO(uint8_t numero, gpioConf_t *gpio_bcd)
 {
@@ -103,26 +87,23 @@ void deBCDaGPIO(uint8_t numero, gpioConf_t *gpio_bcd)
         uint8_t bit = (numero >> i) & 0x01;
 
         if(bit)
+        {
             GPIOOn(gpio_bcd[i].pin);
+        }
         else
+        {
             GPIOOff(gpio_bcd[i].pin);
+        }
     }
 }
 
 /**
- * @brief Muestra un número en el display de 7 segmentos 
+ * @brief Muestra un número decimal en un display multiplexado de 3 dígitos.
  *
- * Esta función convierte un número decimal a BCD y lo muestra en un display
- * de 7 segmentos multiplexado, alternando entre los dígitos con un delay de 5ms
- * La función entra en un bucle infinito para mantener la visualización continua
- *
- * @param data Número decimal a mostrar 
- * @param digits Número de dígitos del display 
- * @param gpio_bcd Arreglo de 4 configuraciones GPIO para los bits BCD
- * @param gpio_sel Arreglo de configuraciones GPIO para la selección de dígitos
- *
- * @note Esta función no retorna; entra en un bucle infinito.
- * @warning Asegúrese de que 'gpio_bcd' tenga 4 elementos y 'gpio_sel' tenga 'digits' elementos.
+ * @param data Número decimal a mostrar.
+ * @param digits Cantidad de dígitos del display.
+ * @param gpio_bcd Vector con los GPIO de datos (D1-D4).
+ * @param gpio_sel Vector con los GPIO selectores (SEL_1, SEL_2, SEL_3).
  */
 void mostrarEnDisplay(uint32_t data, uint8_t digits, gpioConf_t *gpio_bcd, gpioConf_t *gpio_sel)
 {
@@ -149,12 +130,7 @@ void mostrarEnDisplay(uint32_t data, uint8_t digits, gpioConf_t *gpio_bcd, gpioC
 /*==================[main]===================================================*/
 
 /**
- * @brief Función principal de la aplicación
- *
- * Esta función inicializa los pines GPIO para el display de 7 segmentos,
- * configura 4 pines para los bits BCD y 3 pines para la selección de dígitos,
- * y luego llama a mostrarEnDisplay para visualizar el número elegido.
- *
+ * @brief Función principal del programa.
  */
 void app_main(void)
 {
@@ -172,13 +148,16 @@ void app_main(void)
     };
 
     for(uint8_t i = 0; i < 4; i++)
+    {
         GPIOInit(gpio_bcd[i].pin, gpio_bcd[i].dir);
+    }
 
     for(uint8_t i = 0; i < 3; i++)
+    {
         GPIOInit(gpio_sel[i].pin, gpio_sel[i].dir);
+    }
 
-    mostrarEnDisplay(982, 3, gpio_bcd, gpio_sel);
+    mostrarEnDisplay(123, 3, gpio_bcd, gpio_sel);
 }
-/*==================[external functions definition]==========================*/
 
 /*==================[end of file]============================================*/
