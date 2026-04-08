@@ -28,11 +28,11 @@
  *
  * @section changelog Changelog
  *
- * | Date       | Description                                               |
- * |:----------:|:----------------------------------------------------------|
- * | 08/04/2026 | Conversión decimal a BCD y visualización en display.       |
+ * | Date       | Description                                         |
+ * |:----------:|:----------------------------------------------------|
+ * | 08/04/2026 | Conversión decimal a BCD y visualización en display. |
  *
- * @author Houriet Celina celina.houriet@ingenieria.uner.edu.ar
+ * @author Houriet Celina (celina.houriet@ingenieria.uner.edu.ar)
  */
 
 /*==================[inclusions]=============================================*/
@@ -42,9 +42,7 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "gpio_mcu.h"
-
 /*==================[macros and definitions]=================================*/
-
 /**
  * @brief Estructura para configuración de pines GPIO.
  */
@@ -52,9 +50,7 @@ typedef struct{
     gpio_t pin;          /*!< GPIO pin number */
     io_t dir;            /*!< GPIO direction */
 } gpioConf_t;
-
 /*==================[internal functions declaration]=========================*/
-
 /**
  * @brief Convierte un número decimal en un arreglo de dígitos.
  *
@@ -73,7 +69,6 @@ int8_t convertirBCD(uint32_t data, uint8_t digits, uint8_t *bcd_number)
     }
     return 0;
 }
-
 /**
  * @brief Configura los GPIO de datos según el valor BCD recibido.
  *
@@ -96,7 +91,6 @@ void deBCDaGPIO(uint8_t numero, gpioConf_t *gpio_bcd)
         }
     }
 }
-
 /**
  * @brief Muestra un número decimal en un display multiplexado de 3 dígitos.
  *
@@ -126,9 +120,7 @@ void mostrarEnDisplay(uint32_t data, uint8_t digits, gpioConf_t *gpio_bcd, gpioC
         }
     }
 }
-
 /*==================[main]===================================================*/
-
 /**
  * @brief Función principal del programa.
  */
@@ -159,5 +151,4 @@ void app_main(void)
 
     mostrarEnDisplay(123, 3, gpio_bcd, gpio_sel);
 }
-
 /*==================[end of file]============================================*/

@@ -1,0 +1,99 @@
+\doxysection{C:\+/\+\+Users/\+houri/\+\+Desktop/\+programable/\+repositorios/\+\+Houriet\+\_\+1\+C\+\_\+2026/\+firmware/\+projects/\+guia1\+\_\+ej6/\+main/\+guia1\+\_\+ej6.c File Reference}
+\hypertarget{guia1__ej6_8c}{}\label{guia1__ej6_8c}\index{C:/Users/houri/Desktop/programable/repositorios/Houriet\_1C\_2026/firmware/projects/guia1\_ej6/main/guia1\_ej6.c@{C:/Users/houri/Desktop/programable/repositorios/Houriet\_1C\_2026/firmware/projects/guia1\_ej6/main/guia1\_ej6.c}}
+{\ttfamily \+\#include $<$stdio.\+h$>$}\newline
+{\ttfamily \+\#include $<$stdint.\+h$>$}\newline
+{\ttfamily \+\#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \+\#include "{}freertos/\+\+Free\+RTOS.\+h"{}}\newline
+{\ttfamily \+\#include "{}freertos/\+task.\+h"{}}\newline
+{\ttfamily \+\#include "{}gpio\+\_\+mcu.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \doxymbox{\hyperlink{structgpio_conf__t}{gpio\+Conf\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Estructura para configuración de pines GPIO. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int8\+\_\+t \doxymbox{\hyperlink{guia1__ej6_8c_a5dac0def3100c04871c1034abda48679}{convertir\+BCD}} (uint32\+\_\+t data, uint8\+\_\+t digits, uint8\+\_\+t \texorpdfstring{$\ast$}{*}bcd\+\_\+number)
+\begin{DoxyCompactList}\small\item\em Convierte un número decimal en un arreglo de dígitos. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{guia1__ej6_8c_ab24560584f20bc579e998d147283feb1}{de\+BCDa\+GPIO}} (uint8\+\_\+t numero, \doxymbox{\hyperlink{structgpio_conf__t}{gpio\+Conf\+\_\+t}} \texorpdfstring{$\ast$}{*}gpio\+\_\+bcd)
+\begin{DoxyCompactList}\small\item\em Configura los GPIO de datos según el valor BCD recibido. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{guia1__ej6_8c_ad33f975e889a7b1d3f60a19b95d41e5c}{mostrar\+En\+Display}} (uint32\+\_\+t data, uint8\+\_\+t digits, \doxymbox{\hyperlink{structgpio_conf__t}{gpio\+Conf\+\_\+t}} \texorpdfstring{$\ast$}{*}gpio\+\_\+bcd, \doxymbox{\hyperlink{structgpio_conf__t}{gpio\+Conf\+\_\+t}} \texorpdfstring{$\ast$}{*}gpio\+\_\+sel)
+\begin{DoxyCompactList}\small\item\em Muestra un número decimal en un display multiplexado de 3 dígitos. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{guia1__ej6_8c_a630544a7f0a2cc40d8a7fefab7e2fe70}{app\+\_\+main}} (void)
+\begin{DoxyCompactList}\small\item\em Función principal del programa. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{guia1__ej6_8c_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{guia1__ej6_8c_a630544a7f0a2cc40d8a7fefab7e2fe70}\index{guia1\_ej6.c@{guia1\_ej6.c}!app\_main@{app\_main}}
+\index{app\_main@{app\_main}!guia1\_ej6.c@{guia1\_ej6.c}}
+\doxysubsubsection{\texorpdfstring{app\_main()}{app\_main()}}
+{\footnotesize\ttfamily \label{guia1__ej6_8c_a630544a7f0a2cc40d8a7fefab7e2fe70} 
+void app\+\_\+main (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Función principal del programa. 
+
+\Hypertarget{guia1__ej6_8c_a5dac0def3100c04871c1034abda48679}\index{guia1\_ej6.c@{guia1\_ej6.c}!convertirBCD@{convertirBCD}}
+\index{convertirBCD@{convertirBCD}!guia1\_ej6.c@{guia1\_ej6.c}}
+\doxysubsubsection{\texorpdfstring{convertirBCD()}{convertirBCD()}}
+{\footnotesize\ttfamily \label{guia1__ej6_8c_a5dac0def3100c04871c1034abda48679} 
+int8\+\_\+t convertir\+BCD (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{data}{, }\item[{uint8\+\_\+t}]{digits}{, }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{bcd\+\_\+number}{}\end{DoxyParamCaption})}
+
+
+
+Convierte un número decimal en un arreglo de dígitos. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Número decimal a convertir. \\
+\hline
+{\em digits} & Cantidad de dígitos a obtener. \\
+\hline
+{\em bcd\+\_\+number} & Arreglo donde se almacenan los dígitos obtenidos.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int8\+\_\+t Retorna 0 si la conversión fue exitosa. 
+\end{DoxyReturn}
+\Hypertarget{guia1__ej6_8c_ab24560584f20bc579e998d147283feb1}\index{guia1\_ej6.c@{guia1\_ej6.c}!deBCDaGPIO@{deBCDaGPIO}}
+\index{deBCDaGPIO@{deBCDaGPIO}!guia1\_ej6.c@{guia1\_ej6.c}}
+\doxysubsubsection{\texorpdfstring{deBCDaGPIO()}{deBCDaGPIO()}}
+{\footnotesize\ttfamily \label{guia1__ej6_8c_ab24560584f20bc579e998d147283feb1} 
+void de\+BCDa\+GPIO (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{numero}{, }\item[{\doxymbox{\hyperlink{structgpio_conf__t}{gpio\+Conf\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{gpio\+\_\+bcd}{}\end{DoxyParamCaption})}
+
+
+
+Configura los GPIO de datos según el valor BCD recibido. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em numero} & Dígito a representar (0 a 9). \\
+\hline
+{\em gpio\+\_\+bcd} & Vector con los 4 GPIO correspondientes a D1-\/\+D4. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{guia1__ej6_8c_ad33f975e889a7b1d3f60a19b95d41e5c}\index{guia1\_ej6.c@{guia1\_ej6.c}!mostrarEnDisplay@{mostrarEnDisplay}}
+\index{mostrarEnDisplay@{mostrarEnDisplay}!guia1\_ej6.c@{guia1\_ej6.c}}
+\doxysubsubsection{\texorpdfstring{mostrarEnDisplay()}{mostrarEnDisplay()}}
+{\footnotesize\ttfamily \label{guia1__ej6_8c_ad33f975e889a7b1d3f60a19b95d41e5c} 
+void mostrar\+En\+Display (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{data}{, }\item[{uint8\+\_\+t}]{digits}{, }\item[{\doxymbox{\hyperlink{structgpio_conf__t}{gpio\+Conf\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{gpio\+\_\+bcd}{, }\item[{\doxymbox{\hyperlink{structgpio_conf__t}{gpio\+Conf\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{gpio\+\_\+sel}{}\end{DoxyParamCaption})}
+
+
+
+Muestra un número decimal en un display multiplexado de 3 dígitos. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Número decimal a mostrar. \\
+\hline
+{\em digits} & Cantidad de dígitos del display. \\
+\hline
+{\em gpio\+\_\+bcd} & Vector con los GPIO de datos (D1-\/\+D4). \\
+\hline
+{\em gpio\+\_\+sel} & Vector con los GPIO selectores (SEL\+\_\+1, SEL\+\_\+2, SEL\+\_\+3). \\
+\hline
+\end{DoxyParams}
