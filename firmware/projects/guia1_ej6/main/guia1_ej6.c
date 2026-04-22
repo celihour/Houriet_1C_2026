@@ -46,6 +46,7 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "gpio_mcu.h"
+#include "hc_sr04.h"
 /*==================[macros and definitions]=================================*/
 /**
  * @brief Estructura para configuración de pines GPIO.
