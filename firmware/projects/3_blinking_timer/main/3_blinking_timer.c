@@ -76,6 +76,7 @@ void app_main(void){
         .param_p = NULL
     };
     TimerInit(&timer_led_1);
+    
     timer_config_t timer_led_2 = {
         .timer = TIMER_B,
         .period = CONFIG_BLINK_PERIOD_LED_2_US,
