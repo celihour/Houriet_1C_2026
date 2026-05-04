@@ -16,12 +16,12 @@ enum{ON, OFF, TOGGLE};
 #define CONFIG_BLINK_PERIOD 1000
 
 void control_leds(struct leds *mis_leds){
-	switch(mis_leds->mode){
+	switch(mis_leds -> mode){
 		case ON:
-			LedOn(mis_leds->n_led);
+			LedOn(mis_leds -> n_led);
 			break;
 		case OFF:
-			LedOff(mis_leds->n_led);
+			LedOff(mis_leds -> n_led);
 			break;
 		case TOGGLE:
 			uint8_t i=0;

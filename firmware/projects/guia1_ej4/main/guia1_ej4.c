@@ -21,7 +21,6 @@ void app_main(void)
     uint8_t bcd_number[3];
     convertirBCD(data, digits, bcd_number);
 
-    // Imprimir el resultado
     printf("Número convertido a BCD:\n");
     for (uint8_t i = 0; i < digits; i++)
     {
