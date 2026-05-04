@@ -1,9 +1,28 @@
+/*! @mainpage Decimal to BCD Converter
+ *
+ * \section genDesc General Description
+ *
+ * This example demonstrates the conversion of a decimal number to BCD (Binary Coded Decimal).
+ * @section changelog Changelog
+ *
+ * |   Date     | Description                                    |
+ * |:----------:|:-----------------------------------------------|
+ * | 12/09/2023 | Document creation                              |
+ *
+ * @author Houriet Celina
+ *
+ */
+
+/*==================[inclusions]=============================================*/
 #include <stdio.h>
 #include <stdint.h>
 #include <stdbool.h>
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
+/*==================[macros and definitions]=================================*/
+/*==================[internal data definition]===============================*/
 
+/*==================[internal functions declaration]=========================*/
 int8_t convertirBCD(uint32_t data, uint8_t digits, uint8_t *bcd_number)
 {
     for (int8_t i = digits - 1; i >= 0; i--)
@@ -13,6 +32,7 @@ int8_t convertirBCD(uint32_t data, uint8_t digits, uint8_t *bcd_number)
     }
     return 0;
 }
+/*==================[external functions definition]==========================*/
 
 void app_main(void)
 {

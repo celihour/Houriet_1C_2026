@@ -1,9 +1,27 @@
+/*! @mainpage LED Control
+ *
+ * \section genDesc General Description
+ *
+ * This example demonstrates the control of LEDs with different modes (ON, OFF, TOGGLE).
+ * 
+ * @section changelog Changelog
+ *
+ * |   Date     | Description                                    |
+ * |:----------:|:-----------------------------------------------|
+ * | 12/09/2023 | Document creation                              |
+ *
+ * @author Houriet Celina
+ *
+ */
+
+/*==================[inclusions]=============================================*/
 #include <stdio.h>
 #include <stdint.h>
 #include <stdbool.h>
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "led.h"
+/*==================[macros and definitions]=================================*/
 
 struct leds{
 	uint8_t mode;
@@ -14,7 +32,9 @@ struct leds{
 
 enum{ON, OFF, TOGGLE};
 #define CONFIG_BLINK_PERIOD 1000
+/*==================[internal data definition]===============================*/
 
+/*==================[internal functions declaration]=========================*/
 void control_leds(struct leds *mis_leds){
 	switch(mis_leds -> mode){
 		case ON:
@@ -32,6 +52,7 @@ void control_leds(struct leds *mis_leds){
 			}
 	}
 }
+/*==================[external functions definition]==========================*/
 
 void app_main(void){
 	LedsInit();
