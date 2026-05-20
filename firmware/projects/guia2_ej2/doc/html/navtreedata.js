@@ -25,7 +25,6 @@
 var NAVTREE =
 [
   [ "Guia 2 Ejercicio 2", "index.html", [
-    [ "Medidor de distancia con interrupciones.", "index.html", "index" ],
     [ "Topics", "topics.html", "topics" ],
     [ "Estructuras de datos", "annotated.html", [
       [ "Estructuras de datos", "annotated.html", "annotated_dup" ],
@@ -40,7 +39,7 @@ var NAVTREE =
       [ "Globales", "globals.html", [
         [ "Todos", "globals.html", "globals_dup" ],
         [ "Funciones", "globals_func.html", "globals_func" ],
-        [ "Variables", "globals_vars.html", "globals_vars" ],
+        [ "Variables", "globals_vars.html", null ],
         [ "typedefs", "globals_type.html", null ],
         [ "Enumeraciones", "globals_enum.html", null ],
         [ "Valores de enumeraciones", "globals_eval.html", "globals_eval" ],
@@ -52,22 +51,14 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"analog__io__mcu_8c.html",
-"bootloader_2config_2sdkconfig_8h.html#a2b81b6becb5fea665cf505f328312ac1",
-"bootloader_2config_2sdkconfig_8h.html#a846c4071ee3d618f09f758325ba2ae66",
-"bootloader_2config_2sdkconfig_8h.html#ae257c5fdcc73a3bfb9c0d5f668eaea0c",
-"config_2sdkconfig_8h.html#a25ef03aa0478f75ba5f5254fd0bfc9a3",
-"config_2sdkconfig_8h.html#a5ef961834d341eb0973811a11f6709e0",
-"config_2sdkconfig_8h.html#a9ad391ed5c7a5107e9c841afca1a75fc",
-"config_2sdkconfig_8h.html#ad5f8658307aee58de237b3090e702abf",
-"drivers_2build_2_c_make_files_23_830_82_2_compiler_id_c_x_x_2_c_make_c_x_x_compiler_id_8cpp.html#a39fb4789a452bfb5df17d40f640dd720",
-"group___b_l_e.html#ggaed078c594a86d36a49f51710e35c405ba5a09deabde1a3a44378b7de44dad27b6",
-"group___g_i_o_p___f_a_s_t.html",
-"group___m_p_u6050.html#ga1fd2792f3c76de279d0072fac890334c",
-"group___m_p_u6050.html#ga8c6df43decae6f7d2cf2e0ee70537a25",
-"group___neo_pixel___stripe.html#ga72327279e6027cbeb0b836bd9c5c6540",
-"l293_8c.html#ac8c0b3ab4b1036bb369de9b5d409b361",
-"structhid__report__map__t.html#abdc686bdd97b9a0e12f56eb9720f4d0d"
+"_c_make_c_compiler_id_8c.html",
+"globals_defs_d.html",
+"group___b_l_e.html#ggaed078c594a86d36a49f51710e35c405baff7192b9ddd4228e02c44b6fb2d7bf85",
+"group___i_c_o_n_s.html#gga945c9cb2ded81b38da222e91d09df40ba71eb4361391758450a430d0ece2bca75",
+"group___m_p_u6050.html#ga3c136677cedb8e974669e70018326ea1",
+"group___m_p_u6050.html#gaa89c6ac6bb68e46a8114a609d2d84c17",
+"group___s_p_i.html#gga919e4040af605e210f6c5f4c6fe13a12a78d05bc33881e02031f9bb60dc5312ee",
+"spi__mcu_8c.html#acff5631217f27db20d7049cd58791eaf"
 ];
 
 var SYNCONMSG = 'pulsar para deshabilitar sincronización';

@@ -57,27 +57,11 @@ bool medir = true;
 bool hold = false;
 
 /*==================[internal functions declaration]=========================*/
+
 /**
  * @brief Actualiza la iluminación de los LEDs de la placa según la distancia recibida.
- * * @param distancia Valor numérico de la distancia medida en centímetros.
+ * @param distancia Valor numérico de la distancia medida en centímetros.
  */
-void ActualizarLedsPorDistancia(uint16_t distancia);
-
-/**
- * @brief Tarea encargada de leer el estado de las teclas y conmutar las variables de control.
- * @param params Puntero genérico de FreeRTOS (no utilizado).
- */
-static void TareaTeclas(void *params);
-
-/**
- * @brief Tarea que gestiona la medición del sensor y la actualización de la interfaz.
- * Si el sistema está en modo medición, lee la distancia del sensor HC-SR04 y actualiza el display y los LEDs.
- * * @param params Puntero genérico de FreeRTOS (no utilizado).
- */
-static void TareaMedicion(void *params);
-
-/*==================[external functions definition]==========================*/
-
 void ActualizarLedsPorDistancia(uint16_t distancia){
 
     if(distancia < 10){
@@ -100,7 +84,9 @@ void ActualizarLedsPorDistancia(uint16_t distancia){
     }
 
 }
-
+/** @brief Tarea encargada de leer el estado de las teclas y conmutar las variables de control.
+ * @param params Puntero genérico de FreeRTOS (no utilizado).
+ */
 static void TareaTeclas(void *params){
     while(1){
         uint8_t teclas = SwitchesRead();
@@ -116,6 +102,10 @@ static void TareaTeclas(void *params){
     }
 }
 
+/** @brief Tarea que gestiona la medición del sensor y la actualización de la interfaz.
+ * Si el sistema está en modo medición, lee la distancia del sensor HC-SR04 y actualiza el display y los LEDs.
+ * @param params Puntero genérico de FreeRTOS (no utilizado).
+ */
 static void TareaMedicion(void *params){
     while(1){
         if(medir){
@@ -133,6 +123,7 @@ static void TareaMedicion(void *params){
     }
 }
 
+/*==================[external functions definition]==========================*/
 /**
  * @brief Función principal.
  *

@@ -4,13 +4,13 @@
  * 
  * @mainpage Medidor de distancia con interrupciones.
  *
- * @section genDesc General Description
+ * @section genDesc
  *
  * El firmware mide la distancia con un sensor HC-SR04 y muestra el valor en cm
  * en un display numérico de 3 dígitos. Además utiliza los LEDs de la placa
  * para indicar el rango de distancia.
  *
- * @section controls Controles
+ * @section controls 
  *
  * - TEC1 (SWITCH_1 / GPIO_4): activar / detener medición en el momento de la interrupción.
  * - TEC2 (SWITCH_2 / GPIO_15): mantener el resultado en HOLD en el momento de la interrupción.
@@ -59,7 +59,7 @@ bool hold = false;
 /** @brief Handle de la tarea de control. */
 TaskHandle_t control_tarea= NULL;
 
-/*==================[external functions definition]==========================*/
+/*==================[internal functions declaration]=========================*/
 
 /**
  * @brief Actualiza el estado de los LEDs según la distancia medida.
@@ -128,6 +128,7 @@ void interrupcion_tecla_2(void *args){
 	hold= !hold;
 }
 
+/*==================[external functions definition]==========================*/
 /**
  * @brief Función principal.
  *

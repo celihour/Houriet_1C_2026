@@ -1,0 +1,269 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.16.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Guia 2 Ejercicio 2: Archivo de código fuente C:/Users/houri/Desktop/programable/repositorios/Houriet_1C_2026/firmware/projects/guia2_ej4/main/guia2_ej4.c</title>
+<link rel="icon" href="icon.ico" type="image/x-icon" />
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="fiuner.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Guia 2 Ejercicio 2<span id="projectnumber">&#160;1.0</span>
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.16.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('guia2__ej4_8c_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">guia2_ej4.c</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="guia2__ej4_8c.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment">/*==================[inclusions]=============================================*/</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#include &quot;freertos/FreeRTOS.h&quot;</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#include &quot;freertos/task.h&quot;</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#include &quot;<a class="code" href="analog__io__mcu_8h.html">analog_io_mcu.h</a>&quot;</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#include &quot;<a class="code" href="uart__mcu_8h.html">uart_mcu.h</a>&quot;</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#include &quot;<a class="code" href="timer__mcu_8h.html">timer_mcu.h</a>&quot;</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment">/*==================[macros and definitions]=================================*/</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="guia2__ej4_8c.html#a84dc33c3dea1c0d89f360fac80a1ee2a">   38</a></span><span class="preprocessor">#define FRECUENCIA_MUESTREO_HZ   500</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="guia2__ej4_8c.html#ac21d70b478b42a590351a0c7ca545b0b">   39</a></span><span class="preprocessor">#define PERIODO_MUESTREO_A      2000</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="guia2__ej4_8c.html#aa6faf93435c58281415be8d2e7c7c87a">   40</a></span><span class="preprocessor">#define PERIODO_MUESTREO_B      20*1000</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="guia2__ej4_8c.html#adac897c7727996af151c8cc61e123d91">   41</a></span><span class="preprocessor">#define ECG_LENGTH (sizeof(ecg_data) / sizeof(ecg_data[0]))</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="comment">/*==================[internal data definition]===============================*/</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="guia2__ej4_8c.html#a9a2b05c74575c4a43bbd6792a6fdbcbe">   44</a></span><span class="keyword">volatile</span> uint16_t <a class="code hl_variable" href="guia2__ej4_8c.html#a9a2b05c74575c4a43bbd6792a6fdbcbe">dato_adc</a> = 0;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="keyword">static</span> uint16_t ecg_index = 0;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="guia2__ej4_8c.html#a7f72e10fcfd9745c842a525696305fa4">   47</a></span>TaskHandle_t <a class="code hl_variable" href="guia2__ej4_8c.html#a7f72e10fcfd9745c842a525696305fa4">envio_uart</a> = <a class="code hl_define" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="guia2__ej4_8c.html#a6553703811496e16076f2e99e66c7c46">   48</a></span>TaskHandle_t <a class="code hl_variable" href="guia2__ej4_8c.html#a6553703811496e16076f2e99e66c7c46">salida_dac</a> = <a class="code hl_define" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="keyword">static</span> <span class="keyword">const</span> uint8_t ecg_data[] = {</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    17,17,17,17,17,17,17,17,17,17,17,18,18,18,17,17,17,17,17,17,17,18,18,18,18,18,18,18,17,17,16,16,16,16,17,17,18,18,18,17,17,17,17,</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>18,18,19,21,22,24,25,26,27,28,29,31,32,33,34,34,35,37,38,37,34,29,24,19,15,14,15,16,17,17,17,16,15,14,13,13,13,13,13,13,13,12,12,</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>10,6,2,3,15,43,88,145,199,237,252,242,211,167,117,70,35,16,14,22,32,38,37,32,27,24,24,26,27,28,28,27,28,28,30,31,31,31,32,33,34,36,</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>38,39,40,41,42,43,45,47,49,51,53,55,57,60,62,65,68,71,75,79,83,87,92,97,101,106,111,116,121,125,129,133,136,138,139,140,140,139,137,</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>133,129,123,117,109,101,92,84,77,70,64,58,52,47,42,39,36,34,31,30,28,27,26,25,25,25,25,25,25,25,25,24,24,24,24,25,25,25,25,25,25,25,</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>24,24,24,24,24,24,24,24,23,23,22,22,21,21,21,20,20,20,20,20,19,19,18,18,18,19,19,19,19,18,17,17,18,18,18,18,18,18,18,18,17,17,17,17,</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>17,17,17</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>};</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="comment">/*==================[internal functions definition]==========================*/</span></div>
+<div class="foldopen" id="foldopen00065" data-start="{" data-end="}">
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="guia2__ej4_8c.html#aae710f11368e417d0efd6883072e6dba">   65</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="guia2__ej4_8c.html#aae710f11368e417d0efd6883072e6dba">InterrupcionTimerA</a>(<span class="keywordtype">void</span> *param)</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>{</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  vTaskNotifyGiveFromISR(<a class="code hl_variable" href="guia2__ej4_8c.html#a7f72e10fcfd9745c842a525696305fa4">envio_uart</a>, <a class="code hl_define" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>}</div>
+</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span></div>
+<div class="foldopen" id="foldopen00075" data-start="{" data-end="}">
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="guia2__ej4_8c.html#ac84a4e00d3f774394b47d80e3b07ed7b">   75</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="guia2__ej4_8c.html#ac84a4e00d3f774394b47d80e3b07ed7b">InterrupcionTimerB</a>(<span class="keywordtype">void</span> *param)</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>{</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>  vTaskNotifyGiveFromISR(<a class="code hl_variable" href="guia2__ej4_8c.html#a6553703811496e16076f2e99e66c7c46">salida_dac</a>, <a class="code hl_define" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>}</div>
+</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span></div>
+<div class="foldopen" id="foldopen00084" data-start="{" data-end="}">
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="guia2__ej4_8c.html#a3f16960a92cc41791e92b2245d93b1e6">   84</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="guia2__ej4_8c.html#a3f16960a92cc41791e92b2245d93b1e6">TareaEnvioUART</a>(<span class="keywordtype">void</span> *param)</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>{</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="keywordflow">while</span>(1)</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    {</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        ulTaskNotifyTake(pdTRUE, portMAX_DELAY);</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        <a class="code hl_function" href="group___analog___i_o.html#gab5ae00a35744f407072230979e593fd9">AnalogInputReadSingle</a>(<a class="code hl_enumvalue" href="group___analog___i_o.html#gga4ebdf50515e5d73c58c24fd1491770dca703cf81b7a9530ba8650e0ee2f29d68e">CH1</a>, &amp;<a class="code hl_variable" href="guia2__ej4_8c.html#a9a2b05c74575c4a43bbd6792a6fdbcbe">dato_adc</a>);</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        <a class="code hl_function" href="group___u_a_r_t.html#ga60db217694ea24ad75fcedda3336a3a8">UartSendString</a>(<a class="code hl_enumvalue" href="group___u_a_r_t.html#gga6e1a445bae87c4cfd26710dbd4657b77af81669fbb473eedf3d1789fcf08d9056">UART_PC</a>, <span class="stringliteral">&quot;&gt;ch1:&quot;</span>);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        <a class="code hl_function" href="group___u_a_r_t.html#ga60db217694ea24ad75fcedda3336a3a8">UartSendString</a>(<a class="code hl_enumvalue" href="group___u_a_r_t.html#gga6e1a445bae87c4cfd26710dbd4657b77af81669fbb473eedf3d1789fcf08d9056">UART_PC</a>, (<span class="keywordtype">char</span>*)<a class="code hl_function" href="group___u_a_r_t.html#ga00c7e785d2874c52bab6e4dba88a5e23">UartItoa</a>(<a class="code hl_variable" href="guia2__ej4_8c.html#a9a2b05c74575c4a43bbd6792a6fdbcbe">dato_adc</a>, 10));</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        <a class="code hl_function" href="group___u_a_r_t.html#ga60db217694ea24ad75fcedda3336a3a8">UartSendString</a>(<a class="code hl_enumvalue" href="group___u_a_r_t.html#gga6e1a445bae87c4cfd26710dbd4657b77af81669fbb473eedf3d1789fcf08d9056">UART_PC</a>, <span class="stringliteral">&quot;\r\n&quot;</span>);</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    }</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>}</div>
+</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span></div>
+<div class="foldopen" id="foldopen00100" data-start="{" data-end="}">
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno"><a class="line" href="guia2__ej4_8c.html#a871cf9c9a6a5c5a9d6c42081f29686df">  100</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="guia2__ej4_8c.html#a871cf9c9a6a5c5a9d6c42081f29686df">TareaSalidaDAC</a>(<span class="keywordtype">void</span> *param)</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>{</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <span class="keywordflow">while</span>(1)</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    {</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        ulTaskNotifyTake(pdTRUE, portMAX_DELAY);</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        <a class="code hl_function" href="group___analog___i_o.html#gad3fea4064bfa31ae309d4da542347198">AnalogOutputWrite</a>(ecg_data[ecg_index]);</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        ecg_index++;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        <span class="keywordflow">if</span>(ecg_index &gt;= <a class="code hl_define" href="guia2__ej4_8c.html#adac897c7727996af151c8cc61e123d91">ECG_LENGTH</a>)</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>            ecg_index = 0;</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    }</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>}</div>
+</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span><span class="comment">/*==================[external functions definition]==========================*/</span></div>
+<div class="foldopen" id="foldopen00119" data-start="{" data-end="}">
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno"><a class="line" href="guia2__ej4_8c.html#a630544a7f0a2cc40d8a7fefab7e2fe70">  119</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="guia2__ej4_8c.html#a630544a7f0a2cc40d8a7fefab7e2fe70">app_main</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>{</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    <a class="code hl_struct" href="structanalog__input__config__t.html">analog_input_config_t</a> adc_config = {</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>        .input = <a class="code hl_enumvalue" href="group___analog___i_o.html#gga4ebdf50515e5d73c58c24fd1491770dca703cf81b7a9530ba8650e0ee2f29d68e">CH1</a>,</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>        .mode = <a class="code hl_enumvalue" href="group___analog___i_o.html#gga51acd785c14953090a3507d4fa8e5939a3b0a8cf9a7759ea8b7c9494eb7fb3dd4">ADC_SINGLE</a>,</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>        .func_p = <a class="code hl_define" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>,</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>        .param_p = <a class="code hl_define" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>,</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        .sample_frec = 0</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    };</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    <a class="code hl_function" href="group___analog___i_o.html#ga24ce5556aa4682468220b982f151cdfe">AnalogInputInit</a>(&amp;adc_config);</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span> </div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    <a class="code hl_function" href="group___analog___i_o.html#gab57399e946247652a096a0e2d3a1b69a">AnalogOutputInit</a>();</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span> </div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    <a class="code hl_struct" href="structserial__config__t.html">serial_config_t</a> uart_config = {</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        .port = <a class="code hl_enumvalue" href="group___u_a_r_t.html#gga6e1a445bae87c4cfd26710dbd4657b77af81669fbb473eedf3d1789fcf08d9056">UART_PC</a>,</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>        .baud_rate = 115200,</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>        .func_p = <a class="code hl_define" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>,</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>        .param_p = <a class="code hl_define" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    };</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    <a class="code hl_function" href="group___u_a_r_t.html#ga440f6a03dfd8b310f5fdf42c3bf20c42">UartInit</a>(&amp;uart_config);</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span> </div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    <a class="code hl_struct" href="structtimer__config__t.html">timer_config_t</a> timer_a_config = {</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>        .timer = <a class="code hl_enumvalue" href="group___timer.html#ggacc4e64394d03a6e790f8e52c674534d9a179b1231f027eba52fa4ef94ec174598">TIMER_A</a>,</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>        .period = <a class="code hl_define" href="guia2__ej4_8c.html#ac21d70b478b42a590351a0c7ca545b0b">PERIODO_MUESTREO_A</a>,</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>        .func_p = <a class="code hl_function" href="guia2__ej4_8c.html#aae710f11368e417d0efd6883072e6dba">InterrupcionTimerA</a>,</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>        .param_p = <a class="code hl_define" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>    };</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    <a class="code hl_function" href="group___timer.html#gae8617c0d176463a60441464ad26563f6">TimerInit</a>(&amp;timer_a_config);</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span> </div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    <a class="code hl_struct" href="structtimer__config__t.html">timer_config_t</a> timer_b_config = {</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>        .timer = <a class="code hl_enumvalue" href="group___timer.html#ggacc4e64394d03a6e790f8e52c674534d9a7537925211db58591cb5eeb7ebc7f44f">TIMER_B</a>,</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>        .period = <a class="code hl_define" href="guia2__ej4_8c.html#aa6faf93435c58281415be8d2e7c7c87a">PERIODO_MUESTREO_B</a>,</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>        .func_p = <a class="code hl_function" href="guia2__ej4_8c.html#ac84a4e00d3f774394b47d80e3b07ed7b">InterrupcionTimerB</a>,</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>        .param_p = <a class="code hl_define" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    };</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    <a class="code hl_function" href="group___timer.html#gae8617c0d176463a60441464ad26563f6">TimerInit</a>(&amp;timer_b_config);</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span> </div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    xTaskCreate(<a class="code hl_function" href="guia2__ej4_8c.html#a3f16960a92cc41791e92b2245d93b1e6">TareaEnvioUART</a>, <span class="stringliteral">&quot;EnvioUART&quot;</span>, 2048, <a class="code hl_define" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>, 5, &amp;<a class="code hl_variable" href="guia2__ej4_8c.html#a7f72e10fcfd9745c842a525696305fa4">envio_uart</a>);</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    xTaskCreate(<a class="code hl_function" href="guia2__ej4_8c.html#a871cf9c9a6a5c5a9d6c42081f29686df">TareaSalidaDAC</a>, <span class="stringliteral">&quot;SalidaDAC&quot;</span>, 2048, <a class="code hl_define" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>, 5, &amp;<a class="code hl_variable" href="guia2__ej4_8c.html#a6553703811496e16076f2e99e66c7c46">salida_dac</a>);</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span> </div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    <a class="code hl_function" href="group___timer.html#ga0b1779c5b8f91cc83c8bfd127071ea2f">TimerStart</a>(<a class="code hl_enumvalue" href="group___timer.html#ggacc4e64394d03a6e790f8e52c674534d9a179b1231f027eba52fa4ef94ec174598">TIMER_A</a>);</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    <a class="code hl_function" href="group___timer.html#ga0b1779c5b8f91cc83c8bfd127071ea2f">TimerStart</a>(<a class="code hl_enumvalue" href="group___timer.html#ggacc4e64394d03a6e790f8e52c674534d9a7537925211db58591cb5eeb7ebc7f44f">TIMER_B</a>);</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>}</div>
+</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span><span class="comment">/*==================[end of file]============================================*/</span></div>
+<div class="ttc" id="aanalog__io__mcu_8h_html"><div class="ttname"><a href="analog__io__mcu_8h.html">analog_io_mcu.h</a></div></div>
+<div class="ttc" id="agroup___analog___i_o_html_ga24ce5556aa4682468220b982f151cdfe"><div class="ttname"><a href="group___analog___i_o.html#ga24ce5556aa4682468220b982f151cdfe">AnalogInputInit</a></div><div class="ttdeci">void AnalogInputInit(analog_input_config_t *config)</div><div class="ttdoc">Analog input initialization.</div><div class="ttdef"><b>Definition</b> <a href="analog__io__mcu_8c_source.html#l00045">analog_io_mcu.c:45</a></div></div>
+<div class="ttc" id="agroup___analog___i_o_html_gab57399e946247652a096a0e2d3a1b69a"><div class="ttname"><a href="group___analog___i_o.html#gab57399e946247652a096a0e2d3a1b69a">AnalogOutputInit</a></div><div class="ttdeci">void AnalogOutputInit(void)</div><div class="ttdoc">Analog output initialization (DAC).</div><div class="ttdef"><b>Definition</b> <a href="analog__io__mcu_8c_source.html#l00120">analog_io_mcu.c:120</a></div></div>
+<div class="ttc" id="agroup___analog___i_o_html_gab5ae00a35744f407072230979e593fd9"><div class="ttname"><a href="group___analog___i_o.html#gab5ae00a35744f407072230979e593fd9">AnalogInputReadSingle</a></div><div class="ttdeci">void AnalogInputReadSingle(adc_ch_t channel, uint16_t *value)</div><div class="ttdoc">Read single channel.</div><div class="ttdef"><b>Definition</b> <a href="analog__io__mcu_8c_source.html#l00130">analog_io_mcu.c:130</a></div></div>
+<div class="ttc" id="agroup___analog___i_o_html_gad3fea4064bfa31ae309d4da542347198"><div class="ttname"><a href="group___analog___i_o.html#gad3fea4064bfa31ae309d4da542347198">AnalogOutputWrite</a></div><div class="ttdeci">void AnalogOutputWrite(uint8_t value)</div><div class="ttdoc">Digital-to-Analog convert.</div><div class="ttdef"><b>Definition</b> <a href="analog__io__mcu_8c_source.html#l00159">analog_io_mcu.c:159</a></div></div>
+<div class="ttc" id="agroup___analog___i_o_html_gga4ebdf50515e5d73c58c24fd1491770dca703cf81b7a9530ba8650e0ee2f29d68e"><div class="ttname"><a href="group___analog___i_o.html#gga4ebdf50515e5d73c58c24fd1491770dca703cf81b7a9530ba8650e0ee2f29d68e">CH1</a></div><div class="ttdeci">@ CH1</div><div class="ttdef"><b>Definition</b> <a href="analog__io__mcu_8h_source.html#l00032">analog_io_mcu.h:32</a></div></div>
+<div class="ttc" id="agroup___analog___i_o_html_gga51acd785c14953090a3507d4fa8e5939a3b0a8cf9a7759ea8b7c9494eb7fb3dd4"><div class="ttname"><a href="group___analog___i_o.html#gga51acd785c14953090a3507d4fa8e5939a3b0a8cf9a7759ea8b7c9494eb7fb3dd4">ADC_SINGLE</a></div><div class="ttdeci">@ ADC_SINGLE</div><div class="ttdef"><b>Definition</b> <a href="analog__io__mcu_8h_source.html#l00038">analog_io_mcu.h:38</a></div></div>
+<div class="ttc" id="agroup___timer_html_ga0b1779c5b8f91cc83c8bfd127071ea2f"><div class="ttname"><a href="group___timer.html#ga0b1779c5b8f91cc83c8bfd127071ea2f">TimerStart</a></div><div class="ttdeci">void TimerStart(timer_mcu_t timer)</div><div class="ttdoc">Start timer count.</div><div class="ttdef"><b>Definition</b> <a href="timer__mcu_8c_source.html#l00116">timer_mcu.c:116</a></div></div>
+<div class="ttc" id="agroup___timer_html_gae8617c0d176463a60441464ad26563f6"><div class="ttname"><a href="group___timer.html#gae8617c0d176463a60441464ad26563f6">TimerInit</a></div><div class="ttdeci">void TimerInit(timer_config_t *timer_ini)</div><div class="ttdoc">Timer initialization.</div><div class="ttdef"><b>Definition</b> <a href="timer__mcu_8c_source.html#l00067">timer_mcu.c:67</a></div></div>
+<div class="ttc" id="agroup___timer_html_ggacc4e64394d03a6e790f8e52c674534d9a179b1231f027eba52fa4ef94ec174598"><div class="ttname"><a href="group___timer.html#ggacc4e64394d03a6e790f8e52c674534d9a179b1231f027eba52fa4ef94ec174598">TIMER_A</a></div><div class="ttdeci">@ TIMER_A</div><div class="ttdef"><b>Definition</b> <a href="timer__mcu_8h_source.html#l00032">timer_mcu.h:32</a></div></div>
+<div class="ttc" id="agroup___timer_html_ggacc4e64394d03a6e790f8e52c674534d9a7537925211db58591cb5eeb7ebc7f44f"><div class="ttname"><a href="group___timer.html#ggacc4e64394d03a6e790f8e52c674534d9a7537925211db58591cb5eeb7ebc7f44f">TIMER_B</a></div><div class="ttdeci">@ TIMER_B</div><div class="ttdef"><b>Definition</b> <a href="timer__mcu_8h_source.html#l00033">timer_mcu.h:33</a></div></div>
+<div class="ttc" id="agroup___u_a_r_t_html_ga00c7e785d2874c52bab6e4dba88a5e23"><div class="ttname"><a href="group___u_a_r_t.html#ga00c7e785d2874c52bab6e4dba88a5e23">UartItoa</a></div><div class="ttdeci">uint8_t * UartItoa(uint32_t val, uint8_t base)</div><div class="ttdoc">Convert a number to a String (char array ended with &#39;\0&#39;).</div><div class="ttdef"><b>Definition</b> <a href="uart__mcu_8c_source.html#l00222">uart_mcu.c:222</a></div></div>
+<div class="ttc" id="agroup___u_a_r_t_html_ga440f6a03dfd8b310f5fdf42c3bf20c42"><div class="ttname"><a href="group___u_a_r_t.html#ga440f6a03dfd8b310f5fdf42c3bf20c42">UartInit</a></div><div class="ttdeci">void UartInit(serial_config_t *port_config)</div><div class="ttdoc">Serial port initialization.</div><div class="ttdef"><b>Definition</b> <a href="uart__mcu_8c_source.html#l00107">uart_mcu.c:107</a></div></div>
+<div class="ttc" id="agroup___u_a_r_t_html_ga60db217694ea24ad75fcedda3336a3a8"><div class="ttname"><a href="group___u_a_r_t.html#ga60db217694ea24ad75fcedda3336a3a8">UartSendString</a></div><div class="ttdeci">void UartSendString(uart_mcu_port_t port, const char *msg)</div><div class="ttdoc">Send a String trough serial port.</div><div class="ttdef"><b>Definition</b> <a href="uart__mcu_8c_source.html#l00193">uart_mcu.c:193</a></div></div>
+<div class="ttc" id="agroup___u_a_r_t_html_gga6e1a445bae87c4cfd26710dbd4657b77af81669fbb473eedf3d1789fcf08d9056"><div class="ttname"><a href="group___u_a_r_t.html#gga6e1a445bae87c4cfd26710dbd4657b77af81669fbb473eedf3d1789fcf08d9056">UART_PC</a></div><div class="ttdeci">@ UART_PC</div><div class="ttdef"><b>Definition</b> <a href="uart__mcu_8h_source.html#l00032">uart_mcu.h:32</a></div></div>
+<div class="ttc" id="aguia2__ej4_8c_html_a3f16960a92cc41791e92b2245d93b1e6"><div class="ttname"><a href="guia2__ej4_8c.html#a3f16960a92cc41791e92b2245d93b1e6">TareaEnvioUART</a></div><div class="ttdeci">void TareaEnvioUART(void *param)</div><div class="ttdoc">Tarea que lee CH1 del ADC y envía el valor por UART al graficador. Queda bloqueada hasta recibir noti...</div><div class="ttdef"><b>Definition</b> <a href="#l00084">guia2_ej4.c:84</a></div></div>
+<div class="ttc" id="aguia2__ej4_8c_html_a630544a7f0a2cc40d8a7fefab7e2fe70"><div class="ttname"><a href="guia2__ej4_8c.html#a630544a7f0a2cc40d8a7fefab7e2fe70">app_main</a></div><div class="ttdeci">void app_main(void)</div><div class="ttdoc">Función principal de la aplicación.</div><div class="ttdef"><b>Definition</b> <a href="#l00119">guia2_ej4.c:119</a></div></div>
+<div class="ttc" id="aguia2__ej4_8c_html_a6553703811496e16076f2e99e66c7c46"><div class="ttname"><a href="guia2__ej4_8c.html#a6553703811496e16076f2e99e66c7c46">salida_dac</a></div><div class="ttdeci">TaskHandle_t salida_dac</div><div class="ttdef"><b>Definition</b> <a href="#l00048">guia2_ej4.c:48</a></div></div>
+<div class="ttc" id="aguia2__ej4_8c_html_a7f72e10fcfd9745c842a525696305fa4"><div class="ttname"><a href="guia2__ej4_8c.html#a7f72e10fcfd9745c842a525696305fa4">envio_uart</a></div><div class="ttdeci">TaskHandle_t envio_uart</div><div class="ttdef"><b>Definition</b> <a href="#l00047">guia2_ej4.c:47</a></div></div>
+<div class="ttc" id="aguia2__ej4_8c_html_a871cf9c9a6a5c5a9d6c42081f29686df"><div class="ttname"><a href="guia2__ej4_8c.html#a871cf9c9a6a5c5a9d6c42081f29686df">TareaSalidaDAC</a></div><div class="ttdeci">void TareaSalidaDAC(void *param)</div><div class="ttdoc">Tarea que escribe la señal de ECG en el DAC de forma cíclica. Queda bloqueada hasta recibir notificac...</div><div class="ttdef"><b>Definition</b> <a href="#l00100">guia2_ej4.c:100</a></div></div>
+<div class="ttc" id="aguia2__ej4_8c_html_a9a2b05c74575c4a43bbd6792a6fdbcbe"><div class="ttname"><a href="guia2__ej4_8c.html#a9a2b05c74575c4a43bbd6792a6fdbcbe">dato_adc</a></div><div class="ttdeci">volatile uint16_t dato_adc</div><div class="ttdef"><b>Definition</b> <a href="#l00044">guia2_ej4.c:44</a></div></div>
+<div class="ttc" id="aguia2__ej4_8c_html_aa6faf93435c58281415be8d2e7c7c87a"><div class="ttname"><a href="guia2__ej4_8c.html#aa6faf93435c58281415be8d2e7c7c87a">PERIODO_MUESTREO_B</a></div><div class="ttdeci">#define PERIODO_MUESTREO_B</div><div class="ttdef"><b>Definition</b> <a href="#l00040">guia2_ej4.c:40</a></div></div>
+<div class="ttc" id="aguia2__ej4_8c_html_aae710f11368e417d0efd6883072e6dba"><div class="ttname"><a href="guia2__ej4_8c.html#aae710f11368e417d0efd6883072e6dba">InterrupcionTimerA</a></div><div class="ttdeci">void InterrupcionTimerA(void *param)</div><div class="ttdoc">Dispara la lectura del ADC y envío por UART. Se ejecuta cada PERIODO_MUESTREO_US (2 ms,...</div><div class="ttdef"><b>Definition</b> <a href="#l00065">guia2_ej4.c:65</a></div></div>
+<div class="ttc" id="aguia2__ej4_8c_html_ac21d70b478b42a590351a0c7ca545b0b"><div class="ttname"><a href="guia2__ej4_8c.html#ac21d70b478b42a590351a0c7ca545b0b">PERIODO_MUESTREO_A</a></div><div class="ttdeci">#define PERIODO_MUESTREO_A</div><div class="ttdef"><b>Definition</b> <a href="#l00039">guia2_ej4.c:39</a></div></div>
+<div class="ttc" id="aguia2__ej4_8c_html_ac84a4e00d3f774394b47d80e3b07ed7b"><div class="ttname"><a href="guia2__ej4_8c.html#ac84a4e00d3f774394b47d80e3b07ed7b">InterrupcionTimerB</a></div><div class="ttdeci">void InterrupcionTimerB(void *param)</div><div class="ttdoc">Dispara la reproducción del ECG por DAC. Se ejecuta cada PERIODO_MUESTREO_US (2 ms,...</div><div class="ttdef"><b>Definition</b> <a href="#l00075">guia2_ej4.c:75</a></div></div>
+<div class="ttc" id="aguia2__ej4_8c_html_adac897c7727996af151c8cc61e123d91"><div class="ttname"><a href="guia2__ej4_8c.html#adac897c7727996af151c8cc61e123d91">ECG_LENGTH</a></div><div class="ttdeci">#define ECG_LENGTH</div><div class="ttdef"><b>Definition</b> <a href="#l00041">guia2_ej4.c:41</a></div></div>
+<div class="ttc" id="aili9341_8c_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition</b> <a href="ili9341_8c_source.html#l00019">ili9341.c:19</a></div></div>
+<div class="ttc" id="astructanalog__input__config__t_html"><div class="ttname"><a href="structanalog__input__config__t.html">analog_input_config_t</a></div><div class="ttdoc">Analog inputs config structure.</div><div class="ttdef"><b>Definition</b> <a href="analog__io__mcu_8h_source.html#l00048">analog_io_mcu.h:48</a></div></div>
+<div class="ttc" id="astructserial__config__t_html"><div class="ttname"><a href="structserial__config__t.html">serial_config_t</a></div><div class="ttdoc">Serial port configuration struct.</div><div class="ttdef"><b>Definition</b> <a href="uart__mcu_8h_source.html#l00038">uart_mcu.h:38</a></div></div>
+<div class="ttc" id="astructtimer__config__t_html"><div class="ttname"><a href="structtimer__config__t.html">timer_config_t</a></div><div class="ttdoc">Timer configuration struct.</div><div class="ttdef"><b>Definition</b> <a href="timer__mcu_8h_source.html#l00039">timer_mcu.h:39</a></div></div>
+<div class="ttc" id="atimer__mcu_8h_html"><div class="ttname"><a href="timer__mcu_8h.html">timer_mcu.h</a></div></div>
+<div class="ttc" id="auart__mcu_8h_html"><div class="ttname"><a href="uart__mcu_8h.html">uart_mcu.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_d9edf6c004b4a7ff14fe9ae7a92214ee.html">firmware</a></li><li class="navelem"><a href="dir_429d80758da54da73083af4edd40d0b3.html">projects</a></li><li class="navelem"><a href="dir_2da467b29f1a142190d1444452b645d1.html">guia2_ej4</a></li><li class="navelem"><a href="dir_6e3681f944d513a3247087c385364f37.html">main</a></li><li class="navelem"><a href="guia2__ej4_8c.html">guia2_ej4.c</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
+  </ul>
+</div>
+</body>
+</html>

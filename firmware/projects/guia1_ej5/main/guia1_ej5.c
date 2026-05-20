@@ -62,13 +62,10 @@ void app_main(void) {
         GPIOInit(gpio_vector[i].pin, gpio_vector[i].dir);
     }
     uint8_t bcd = 5;
-    printf("Procesando BCD: %d\n", bcd);
     for(int i = 0; i < 4; i++) {
         int bit = (bcd >> i) & 1;
-        printf("Bit %d (GPIO_%d): %d\n", i, gpio_vector[i].pin, bit);
     }
     deBCDaGPIO(bcd, gpio_vector);
-    printf("GPIOs configurados según BCD.\n");
 }
 
 /*==================[end of file]============================================*/
